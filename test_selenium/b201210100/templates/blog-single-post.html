@@ -1,0 +1,431 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="DataSoft  IT Solutions &  Services Template">
+  <link href="{% static 'assets/images/favicon/favicon.png' %}" rel="icon">
+  <title>DataSoft IT Solutions & Services Template</title>
+  <title>{% block title %}Blog Single Post{% endblock %}</title>
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
+  <link rel="stylesheet" href="{% static 'assets/css/libraries.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="preloader">
+      <div class="loading"><span></span><span></span><span></span><span></span></div>
+    </div><!-- /.preloader -->
+
+    <!-- =========================
+        Header 
+    =========================== -->
+    <header class="header header-light header-full">
+      <nav class="navbar navbar-expand-lg sticky-navbar">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="{% static 'assets/images/logo/logo-light.png' %}" class="logo-light" alt="logo">
+            <img src="{% static 'assets/images/logo/logo-dark.png' %}" class="logo-dark" alt="logo">
+          </a>
+          <button class="navbar-toggler" type="button">
+            <span class="menu-lines"><span></span></span>
+          </button>
+          <div class="header__top-right">
+            <ul class="list-unstyled d-flex justify-content-end align-items-center mb-0">
+              <li>
+                <div class="dropdown lang-dropdown">
+                  <button class="dropdown-toggle lang-dropdown-toggle" id="langDropdown" data-toggle="dropdown">
+                    <i class="icon-map"></i><span>English</span>
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="langDropdown">
+                    <a class="dropdown-item" href="#">Spain</a>
+                    <a class="dropdown-item" href="#">France</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <ul class="navbar-actions list-unstyled mb-0 d-flex align-items-center">
+                  <li class="d-none d-xl-block">
+                    <a href="{% url 'requestQuote' %}" class="btn action__btn-contact">Request A Quote</a>
+                  </li>
+                </ul><!-- /.navbar-actions -->
+              </li>
+            </ul>
+          </div><!-- /.header-top-right -->
+          <div class="collapse navbar-collapse" id="mainNavigation">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav__item has-dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">Home</a>
+                <ul class="dropdown-menu">
+                  <li class="nav__item">
+                    <a href="{% url 'index' %}" class="nav__item-link">Home Main</a>
+                  </li><!-- /.nav-item -->
+                </ul><!-- /.dropdown-menu -->
+              </li><!-- /.nav-item -->
+              <li class="nav__item has-dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">Company</a>
+                <ul class="dropdown-menu">
+                  <li class="nav__item">
+                    <a href="{% url 'aboutUs' %}" class="nav__item-link">About Us</a>
+                  </li><!-- /.nav-item -->
+                  <li class="nav__item">
+                    <a href="{% url 'whyUs' %}" class="nav__item-link">Why Choose Us</a>
+                  </li><!-- /.nav-item -->
+                  <li class="nav__item">
+                    <a href="{% url 'leadershipTeam' %}" class="nav__item-link">Leadership Team</a>
+                  </li><!-- /.nav-item -->
+                  <li class="nav__item">
+                    <a href="{% url 'awards' %}" class="nav__item-link">Award & Recognition</a>
+                  </li><!-- /.nav-item -->
+                  <li class="nav__item">
+                    <a href="{% url 'pricing' %}" class="nav__item-link">Pricing & Plans</a>
+                  </li><!-- /.nav-item -->
+                  <li class="nav__item">
+                    <a href="{% url 'faqs' %}" class="nav__item-link">Help & FAQs</a>
+                  </li> <!-- /.nav-item -->
+                  <li class="nav__item">
+                    <a href="{% url 'careers' %}" class="nav__item-link">Careers</a>
+                  </li><!-- /.nav-item -->
+                </ul><!-- /.dropdown-menu -->
+              </li><!-- /.nav-item -->
+              <li class="nav__item has-dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">IT Solutions</a>
+                <ul class="dropdown-menu wide-dropdown-menu">
+                  <li class="nav__item">
+                    <div class="row mx-0">
+                      <div class="col-sm-6 dropdown-menu-col">
+                        <a href="{% url 'itSolutions' %}" class="nav__item-link dropdown-menu-title">IT Solutions</a>
+                        <ul class="nav flex-column">
+                          <li class="nav__item"><a class="nav__item-link" href="{% url 'itSolutionsSingle' %}">IT
+                            Management</a></li>
+                          <li class="nav__item"><a class="nav__item-link" href="{% url 'itSolutionsSingle' %}">Cyber
+                            Security</a></li>
+                          <li class="nav__item"><a class="nav__item-link" href="{% url 'itSolutionsSingle' %}">Cloud
+                            Computing</a></li>
+                          <li class="nav__item"><a class="nav__item-link" href="{% url 'itSolutionsSingle' %}">IT
+                            Consulting</a></li>
+                          <li class="nav__item"><a class="nav__item-link" href="{% url 'itSolutionsSingle' %}">Software
+                            Dev</a></li>
+                          <li class="nav__item"><a class="nav__item-link" href="{% url 'itSolutionsSingle' %}">IT Support</a></li>
+                        </ul>
+                        
+                      </div><!-- /.col-sm-6 -->
+                      <div class="col-sm-6 dropdown-menu-col">
+                        <a href="{% url 'industries' %}" class="nav__item-link dropdown-menu-title">Industries</a>
+                        <a href="{% url 'add_industries' %}" class="nav__item-link dropdown-menu-title">Add New Industries</a>
+
+
+                      </div><!-- /.col-sm-6 -->
+                    </div><!-- /.row -->
+                  </li><!-- /.nav-item -->
+                </ul><!-- /.dropdown-menu -->
+              </li><!-- /.nav-item -->
+              <li class="nav__item has-dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">Case Studies</a>
+                <ul class="dropdown-menu">
+                  <li class="nav__item">
+                    <a href="{% url 'caseStudiesGrid' %}" class="nav__item-link">Case Studies Grid</a>
+                  </li><!-- /.nav-item -->
+                  <li class="nav__item">
+                    <a href="{% url 'caseStudiesModern' %}" class="nav__item-link">Case Studies Modern</a>
+                  </li><!-- /.nav-item -->
+                  <li class="nav__item">
+                    <a href="{% url 'caseStudiesClassic' %}" class="nav__item-link">Case Studies Classic</a>
+                  </li><!-- /.nav-item -->
+                  <li class="nav__item">
+                    <a href="{% url 'caseStudiesSingle' %}" class="nav__item-link">Single Case Study</a>
+                  </li><!-- /.nav-item -->
+                </ul><!-- /.dropdown-menu -->
+              </li><!-- /.nav-item -->
+              
+              <li class="nav__item has-dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link active">Blog</a>
+                <ul class="dropdown-menu">
+                  <li class="nav__item">
+                    <a href="{% url 'blog' %}" class="nav__item-link">Our Blog</a>
+                  </li><!-- /.nav-item -->
+                  <li class="nav__item">
+                    <a href="{% url 'add_blog_post' %}" class="nav__item-link">Add New Blog</a>
+                  </li><!-- /.nav-item -->
+                </ul><!-- /.dropdown-menu -->
+              </li><!-- /.nav-item -->
+
+              <li class="nav__item has-dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">Features</a>
+                <ul class="dropdown-menu">
+                  <li class="nav__item">
+                    <a href="{% url 'comingSoon' %}" class="nav__item-link">Coming Soon</a>
+                  </li><!-- /.nav-item -->
+                  <li class="nav__item">
+                    <a href="{% url 'dortyuzdort' %}" class="nav__item-link">404 Page</a>
+                  </li><!-- /.nav-item -->
+                </ul><!-- /.dropdown-menu -->
+              </li><!-- /.nav-item -->
+
+              <li class="nav__item">
+                <a href="{% url 'contantUs' %}" class="nav__item-link">Contacts</a>
+              </li><!-- /.nav-item -->
+            </ul><!-- /.navbar-nav -->
+            <button class="close-mobile-menu d-block d-lg-none"><i class="fas fa-times"></i></button>
+          </div><!-- /.navbar-collapse -->
+          <div class="d-flex align-items-center">
+            <a href="#" class="action__btn action__btn-search ml-30"><i class="icon-search"></i></a>
+          </div>
+        </div><!-- /.container -->
+      </nav><!-- /.navabr -->
+    </header><!-- /.Header -->
+
+    <!-- ========================
+       page title 
+    =========================== -->
+    <section class="page-title page-title-layout15 text-center">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12">
+            <nav>
+              <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'blog' %}">Blog</a></li>
+                
+              </ol>
+            </nav>
+          </div><!-- /.col-xl-6 -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </section><!-- /.page-title -->
+
+    <section class="blog blog-single pt-0 pb-80">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-8">
+            <div class="post-item mb-0">
+              <div class="post__img">
+                <img src="{{ blog_post.image.url }}" alt="{{ blog_post.title }}">
+              </div><!-- /.post-img -->
+              <div class="post__meta d-flex align-items-center mb-20">
+                <span class="post__meta-date">Description: {{ blog_post.description }}</span>
+              </div><!-- /.blog-meta -->
+              
+              <div class="post__meta d-flex align-items-center mb-20">
+                <span class="post__meta-date">Category: {{ blog_post.categories }}</span>
+              </div><!-- /.blog-meta -->
+              
+              <div class="post__meta d-flex align-items-center mb-20">
+                <span class="post__meta-date">Date: {{ blog_post.date }}</span>
+              </div><!-- /.blog-meta -->
+              
+              <div class="post__meta d-flex align-items-center mb-20">
+                <span class="post__meta-date">Read More Link: {{ blog_post.read_more_link }}</span>
+              </div><!-- /.blog-meta -->
+              
+              <div class="post__meta d-flex align-items-center mb-20">
+                <span class="post__meta-date">{{ blog_post.created_at|date:"F d, Y" }}</span>
+                <div class="post__meta-cat">
+                  {% for category in blog_post.categories.all %}
+                  <a href="#">{{ category.name }}</a>
+                  {% endfor %}
+                </div><!-- /.blog-meta-cat -->
+
+              </div><!-- /.blog-meta -->
+              <h1 class="post__title mb-30">
+                {{ blog_post.title }}
+              </h1>
+              <div class="post__desc">
+                {{ blog_post.content|safe }}
+              </div><!-- /.blog-desc -->
+              <div class="blog-comments mb-70">
+                <h5 class="blog-widget__title">{{ comments.count }} comments</h5>
+                <ul class="comments-list list-unstyled">
+                  {% for comment in comments %}
+                  <li class="comment__item">
+                    <div class="comment__avatar">
+                      <img src="{{ comment.author.profile.image.url }}" alt="avatar">
+                    </div>
+                    <div class="comment__content">
+                      <h5 class="comment__author">{{ comment.author.username }}</h5>
+                      <span class="comment__date">{{ comment.created_at }}</span>
+                      <p class="comment__desc">{{ comment.content }}</p>
+                    </div>
+                  </li><!-- /.comment -->
+                  {% empty %}
+                  <li class="comment__item">
+                    <p>No comments yet.</p>
+                  </li>
+                  {% endfor %}
+                </ul><!-- /.comments-list -->
+              </div><!-- /.blog-comments -->
+              <div class="blog-widget blog-comments-form mb-30">
+                <h5 class="blog-widget__title">Yorum Yazın</h5>
+                <form method="post" action="">
+                  {% csrf_token %}
+
+                  <div class="form-group">
+                    <textarea name="content" class="form-control" placeholder="Comment"></textarea>
+                  </div><!-- /.form-group -->
+                  <button type="submit" class="btn btn__primary btn__icon justify-content-between btn__xl">
+                    <span>Submit Comment</span><i class="icon-arrow-right"></i>
+                  </button>
+                  {% if messages %}
+                    <ul class="messages">
+                      {% for message in messages %}
+                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                          {{ message }}
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </form>
+              </div><!-- /.blog-comments-form -->
+            </div><!-- /.post-item -->
+          </div><!-- /.col-lg-8 -->
+          <div class="col-sm-12 col-md-12 col-lg-4">
+            <aside class="sidebar">
+              <!-- Buraya widgetler eklenebilir -->
+            </aside><!-- /.sidebar -->
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </section><!-- /.blog Single -->
+    
+    <!-- ========================
+      Footer
+    ========================== -->
+    <footer class="footer bg-secondary">
+      <div class="container">
+        <div class="footer-top pt-50 pb-30">
+          <div class="row">
+            <div class="col-sm-4 col-md-2 col-lg-4">
+              <img src="{% static 'assets/images/logo/logo-light-small.png' %}" alt="logo" class="mb-30">
+            </div><!-- /.col-lg-2 -->
+            <div class="col-sm-8 col-md-4 col-lg-3">
+              <h6 class="footer-top__title">Sign up for latest IT resources,
+                news and insights from Datasoft!</h6>
+            </div><!-- /.col-lg-3 -->
+            <div class="col-sm-12 col-md-6 col-lg-5">
+              <form class="footer-form d-flex mb-0">
+                <input type="text" class="form-control mr-20" placeholder="Your Email Address">
+                <button type="submit" class="btn btn__primary btn__primary-style2">
+                  <span>Subscribe</span>
+                  <i class="icon-arrow-right"></i>
+                </button>
+              </form>
+            </div><!-- /.col-lg-6 -->
+          </div><!-- /.row -->
+        </div><!-- /.footer-top -->
+        <div class="footer-primary">
+          <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-3 footer-widget footer-widget-about">
+              <div class="footer-widget__content">
+                <div class="contact-info">
+                  <h6 class="footer-widget__title">Quick Contact</h6>
+                  <ul class="contact-list list-unstyled">
+                    <li class="color-gray">If you have any questions or need help, feel free to contact with our team.
+                    </li>
+                    <li class="mt-20 mb-20">
+                      <a href="tel:01061245741" class="phone-number">
+                        <i class="icon-phone"></i> <span>01061245741</span>
+                      </a>
+                    </li>
+                    <li class="color-body">2307 Beverley Rd Brooklyn, New York 11226 United States.</li>
+                  </ul>
+                </div><!-- /.contact-info -->
+                <ul class="social-icons list-unstyled mb-0">
+                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                </ul><!-- /.social-icons -->
+              </div><!-- /.footer-widget__content -->
+            </div><!-- /.col-xl-2 -->
+            <div class="col-sm-6 col-md-6 col-lg-2 offset-lg-1 footer-widget footer-widget-nav">
+              <h6 class="footer-widget__title">Company</h6>
+              <div class="footer-widget__content">
+                <nav>
+                  <ul class="list-unstyled">
+                    <li><<a href="{% url 'aboutUs' %}">About Us</a></li>
+                    <li><a href="{% url 'leadershipTeam' %}">Meet Our Team</a></li>
+                    <li><a href="{% url 'blog' %}">News & Media</a></li>
+                  
+                    <li><a href="{% url 'contantUs' %}">Contacts</a></li>
+                    <li><a href="#">Investors</a></li>
+                  </ul>
+                </nav>
+              </div><!-- /.footer-widget__content -->
+            </div><!-- /.col-lg-2 -->
+            <div class="col-sm-6 col-md-6 col-lg-2 footer-widget footer-widget-nav">
+              <h6 class="footer-widget__title">Solutions</h6>
+              <div class="footer-widget__content">
+                <nav>
+                  <ul class="list-unstyled">
+                    <li><a href="#">IT Management</a></li>
+                    <li><a href="#">Cyber Security</a></li>
+                    <li><a href="#">Cloud Computing</a></li>
+                    <li><a href="#">IT Consulting</a></li>
+                    <li><a href="#">Software Dev</a></li>
+                    <li><a href="#">IT Support</a></li>
+                  </ul>
+                </nav>
+              </div><!-- /.footer-widget__content -->
+            </div><!-- /.col-lg-2 -->
+            <div class="col-sm-6 col-md-6 col-lg-2 footer-widget footer-widget-nav">
+              <h6 class="footer-widget__title">Resources</h6>
+              <div class="footer-widget__content">
+                <nav>
+                  <ul class="list-unstyled">
+                    <li><a href="{% url 'pricing' %}">Pricing and plans</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="{% url 'faqs' %}">Help & FAQ</a></li>
+                    <li><a href="{% url 'contantUs' %}">Contact Us</a></li>
+                    <li><a href="#">Site map</a></li>
+                  </ul>
+                </nav>
+              </div><!-- /.footer-widget__content -->
+            </div><!-- /.col-lg-2 -->
+            <div class="col-sm-6 col-md-6 col-lg-2 footer-widget footer-widget-nav">
+              <h6 class="footer-widget__title">Download</h6>
+              <div class="footer-widget__content">
+                <a href="#" class="btn btn__white btn__download mb-20">
+                  <i class="fab fa-apple"></i>
+                  <span>App Store</span>
+                </a>
+                <a href="#" class="btn btn__white btn__download mb-20">
+                  <i class="fab fa-google-play"></i>
+                  <span>Google Play</span>
+                </a>
+              </div><!-- /.footer-widget__content -->
+            </div><!-- /.col-lg-2 -->
+          </div><!-- /.row -->
+        </div><!-- /.footer-primary -->
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 text-center pb-40">
+            <span class="fz-14">&copy; 2020 DataSoft, All Rights Reserved. With Love by</span>
+            <a class="fz-14 color-primary" href="http://themeforest.net/user/7oroof">7oroof.com</a>
+          </div><!-- /.col-lg-12 -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </footer><!-- /.Footer -->
+    <button id="scrollTopBtn"><i class="fas fa-long-arrow-alt-up"></i></button>
+
+
+    <div class="search-popup">
+      <button type="button" class="search-popup__close"><i class="fas fa-times"></i></button>
+      <form class="search-popup__form">
+        <input type="text" class="search-popup__form__input" placeholder="Type Words Then Enter">
+        <button class="search-popup__btn"><i class="icon-search"></i></button>
+      </form>
+    </div><!-- /. search-popup -->
+  </div><!-- /.wrapper -->
+
+  <script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
+  <script src="{% static 'assets/js/plugins.js' %}"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+</html>

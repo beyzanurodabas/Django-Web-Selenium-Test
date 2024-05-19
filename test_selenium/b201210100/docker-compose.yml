@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  django:
+    build:
+      context: ./
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on: 
+      - db
+    links:
+    - db:db
+    networks:
+      - djangonetwork
+  db:
+    image: postgres:latest
+    restart: always
+    ports:
+      - "5432:5432"
+    environment: 
+      POSTGRES_HOST: localhost
+      POSTGRES_DB: testdb
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_USER: postgres
+    networks:
+      - djangonetwork
+networks:
+  djangonetwork:
+    driver: bridge

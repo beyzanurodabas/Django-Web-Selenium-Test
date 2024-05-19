@@ -1,0 +1,38 @@
+[
+  {
+    "model": "Ornek.item",
+    "fields": {
+      "item_name": "Pepperoni",
+      "image": "images/1.jpg",
+      "ingredients": "<li>Mozzarella cheese</li><li>Red pepper flakes</li><li>Pizza dough</li>",
+      "price": 15
+    }   
+  },
+  {
+    "model": "Ornek.item",
+    "fields": {
+      "item_name": "Hawaiian",
+      "image": "images/2.jpg",
+      "ingredients": "<li>Tomato sauce</li><li>Mozzarella cheese</li><li>Pineapple chunks</li>",
+      "price": 17
+    }   
+  },
+  {
+    "model": "Ornek.item",
+    "fields": {
+      "item_name": "Mexican",
+      "image": "images/3.jpg",
+      "ingredients": "<li>Enchilada sauce</li><li>Shredded chicken</li><li>Diced tomatoes</li>",
+      "price": 18
+    }   
+  },
+  {
+    "model": "Ornek.item",
+    "fields": {
+      "item_name": "Chicken",
+      "image": "images/4.jpg",
+      "ingredients": "<li>Cooked chicken</li><li>Mushrooms</li><li>Fresh basil leaves</li>",
+      "price": 15
+    }   
+  }
+]
